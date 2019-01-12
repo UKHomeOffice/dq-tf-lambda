@@ -45,10 +45,10 @@ class TestE2E(unittest.TestCase):
         self.assertEqual(self.result["root_modules"]["aws_instance.instance"]["user_data"], greenplum_listen)
 
     def test_subnet_vpc(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.subnet"]["vpc_id"], "vpc-12345")
+        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["vpc_id"], "vpc-12345")
 
     def test_subnet_cidr(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.subnet"]["cidr_block"], "10.1.12.0/24")
+        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["cidr_block"], "10.1.12.0/24")
 
     @unittest.skip
     def test_security_group_ingress(self):
@@ -70,10 +70,10 @@ class TestE2E(unittest.TestCase):
         }))
 
     def test_subnet_tags(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.subnet"]["tags.Name"], "subnet-internal-tableau-apps-preprod-dq")
+        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["tags.Name"], "subnet-lambda-apps-preprod-dq")
 
     def test_security_group_tags(self):
-        self.assertEqual(self.result["root_modules"]["aws_security_group.sgrp"]["tags.Name"], "sg-internal-tableau-apps-preprod-dq")
+        self.assertEqual(self.result["root_modules"]["aws_security_group.sgrp"]["tags.Name"], "sg-lambda-apps-preprod-dq")
 
     #def test_ec2_tags(self):
     #    self.assertEqual(self.result["root_modules"]["aws_instance.int_tableau"]["tags.Name"], "ec2-internal-tableau-apps-preprod-dq")
