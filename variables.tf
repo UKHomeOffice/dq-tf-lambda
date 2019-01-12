@@ -1,3 +1,5 @@
+variable "appsvpc_id" {}
+
 variable "naming_suffix" {
   default     = false
   description = "Naming suffix for tags, value passed from dq-tf-apps"
@@ -34,7 +36,12 @@ variable "acp_prod_ingress_cidr" {
 }
 
 variable "dq_lambda_subnet_cidr" {
-  default     = "10.1.40.0/24"
+  default     = "10.1.42.0/24"
+  description = "DQ Apps CIDR as per IP Addresses and CIDR blocks document"
+}
+
+variable "dq_lambda_subnet_cidr_az2" {
+  default     = "10.1.43.0/24"
   description = "DQ Apps CIDR as per IP Addresses and CIDR blocks document"
 }
 
@@ -50,5 +57,10 @@ variable "route_table_id" {
 
 variable "az" {
   default     = "eu-west-2a"
+  description = "Default availability zone for the subnet."
+}
+
+variable "az2" {
+  default     = "eu-west-2b"
   description = "Default availability zone for the subnet."
 }
