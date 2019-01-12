@@ -30,7 +30,7 @@ resource "aws_route_table_association" "internal_tableau_rt_association" {
 }
 
 resource "aws_security_group" "sgrp" {
-  vpc_id = "${var.apps_vpc_id}"
+  vpc_id = "${var.appsvpc_id}"
 
   ingress {
     from_port = "${var.rds_from_port}"
