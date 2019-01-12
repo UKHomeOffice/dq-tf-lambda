@@ -5,7 +5,7 @@ locals {
 resource "aws_subnet" "lambda_subnet" {
   vpc_id                 = "${var.appsvpc_id}"
   cidr_block             = "${var.dq_lambda_subnet_cidr}"
-  ap_public_ip_on_launch = false
+  map_public_ip_on_launch = false
   availability_zone      = "${var.az}"
 
   tags {
@@ -16,7 +16,7 @@ resource "aws_subnet" "lambda_subnet" {
 resource "aws_subnet" "lambda_subnet_az2" {
   vpc_id                 = "${var.appsvpc_id}"
   cidr_block             = "${var.dq_lambda_subnet_cidr_az2}"
-  ap_public_ip_on_launch = false
+  map_public_ip_on_launch = false
   availability_zone      = "${var.az2}"
 
   tags {
