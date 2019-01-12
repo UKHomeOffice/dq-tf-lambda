@@ -20,10 +20,9 @@ class TestE2E(unittest.TestCase):
               providers = {aws = "aws"}
 
               appsvpc_id                        = "1234"
-              opssubnet_cidr_block              = "1.2.3.0/24"
               acp_prod_ingress_cidr             = "10.5.0.0/16"
               dq_ops_ingress_cidr               = "10.2.0.0/16"
-              dq_internal_dashboard_subnet_cidr = "10.1.12.0/24"
+              dq_lambda_subnet_cidr             = "10.1.42.0/24"
               peering_cidr_block                = "1.1.1.0/24"
               apps_vpc_id                       = "vpc-12345"
               naming_suffix                     = "apps-preprod-dq"
