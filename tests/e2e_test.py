@@ -45,10 +45,10 @@ class TestE2E(unittest.TestCase):
         self.assertEqual(self.result["root_modules"]["aws_instance.instance"]["user_data"], greenplum_listen)
 
     def test_subnet_vpc(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["vpc_id"], "vpc-12345")
+        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["vpc_id"], "1234")
 
     def test_subnet_cidr(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["cidr_block"], "10.1.12.0/24")
+        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["cidr_block"], "10.1.42.0/24")
 
     @unittest.skip
     def test_security_group_ingress(self):
