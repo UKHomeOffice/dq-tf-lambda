@@ -38,8 +38,8 @@ resource "aws_security_group" "sgrp" {
     protocol  = "${var.rds_protocol}"
 
     cidr_blocks = [
-      "${var.dq_ops_ingress_cidr}",
-      "${var.peering_cidr_block}",
+      "${var.dq_lambda_subnet_cidr}",
+      "${var.dq_lambda_subnet_cidr_az2}",
     ]
   }
 
