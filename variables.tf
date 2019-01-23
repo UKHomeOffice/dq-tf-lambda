@@ -7,17 +7,17 @@ variable "naming_suffix" {
 
 variable "rds_from_port" {
   default     = 5432 
-  description = "From port for RDS traffic"
+  description = "From port for Postgres traffic"
 }
 
 variable "rds_to_port" {
   default     = 5432 
-  description = "To port for RDS traffic"
+  description = "To port for Postgres traffic"
 }
 
 variable "rds_protocol" {
   default     = "tcp"
-  description = "Protocol for HTTPS traffic"
+  description = "Protocol for Postgres traffic"
 }
 
 variable "peering_cidr_block" {
@@ -37,12 +37,12 @@ variable "acp_prod_ingress_cidr" {
 
 variable "dq_lambda_subnet_cidr" {
   default     = "10.1.42.0/24"
-  description = "DQ Apps CIDR as per IP Addresses and CIDR blocks document"
+  description = "Dedicated subnet for Lambda ENIs"
 }
 
 variable "dq_lambda_subnet_cidr_az2" {
   default     = "10.1.43.0/24"
-  description = "DQ Apps CIDR as per IP Addresses and CIDR blocks document"
+  description = "Dedicated subnet for Lambda ENIs"
 }
 
 variable "apps_vpc_id" {

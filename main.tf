@@ -29,6 +29,11 @@ resource "aws_route_table_association" "internal_tableau_rt_association" {
   route_table_id = "${var.route_table_id}"
 }
 
+resource "aws_route_table_association" "internal_tableau_rt_association_az2" {
+  subnet_id      = "${aws_subnet.lambda_subnet_az2.id}"
+  route_table_id = "${var.route_table_id}"
+}
+
 resource "aws_security_group" "sgrp" {
   vpc_id = "${var.appsvpc_id}"
 
