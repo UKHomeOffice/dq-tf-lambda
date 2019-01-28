@@ -20,21 +20,6 @@ variable "rds_protocol" {
   description = "Protocol for Postgres traffic"
 }
 
-variable "peering_cidr_block" {
-  default     = "10.3.0.0/16"
-  description = "DQ Peering CIDR as per IP Addresses and CIDR blocks document"
-}
-
-variable "dq_ops_ingress_cidr" {
-  default     = "10.2.0.0/16"
-  description = "DQ Ops CIDR as per IP Addresses and CIDR blocks document"
-}
-
-variable "acp_prod_ingress_cidr" {
-  default     = "10.5.0.0/16"
-  description = "ACP Prod CIDR as per IP Addresses and CIDR blocks document"
-}
-
 variable "dq_lambda_subnet_cidr" {
   default     = "10.1.42.0/24"
   description = "Dedicated subnet for Lambda ENIs"
