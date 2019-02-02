@@ -6,12 +6,12 @@ variable "naming_suffix" {
 }
 
 variable "rds_from_port" {
-  default     = 5432 
+  default     = 5432
   description = "From port for Postgres traffic"
 }
 
 variable "rds_to_port" {
-  default     = 5432 
+  default     = 5432
   description = "To port for Postgres traffic"
 }
 
