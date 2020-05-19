@@ -26,20 +26,21 @@ class TestE2E(unittest.TestCase):
             }
 
         """
-        self.result = Runner(self.snippet).result
+        self.runner = Runner(self.snippet)
+        self.result = self.runner.result
 
 
     def test_subnet_vpc(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["vpc_id"], "1234")
+        self.assertEqual(self.runner.get_value("module.root_modules.aws_subnet.lambda_subnet", "vpc_id"), "1234")
 
     def test_subnet_cidr(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["cidr_block"], "10.1.42.0/24")
+        self.assertEqual(self.runner.get_value("module.root_modules.aws_subnet.lambda_subnet", "cidr_block"), "10.1.42.0/24")
 
     def test_subnet_tags(self):
-        self.assertEqual(self.result["root_modules"]["aws_subnet.lambda_subnet"]["tags.Name"], "subnet-lambda-apps-preprod-dq")
+        self.assertEqual(self.runner.get_value("module.root_modules.aws_subnet.lambda_subnet", "tags"), {'Name': "subnet-lambda-apps-preprod-dq"})
 
     def test_security_group_tags(self):
-        self.assertEqual(self.result["root_modules"]["aws_security_group.sgrp"]["tags.Name"], "sg-lambda-apps-preprod-dq")
+        self.assertEqual(self.runner.get_value("module.root_modules.aws_security_group.sgrp", "tags"), {'Name': "sg-lambda-apps-preprod-dq"})
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,4 +1,5 @@
-variable "appsvpc_id" {}
+variable "appsvpc_id" {
+}
 
 variable "naming_suffix" {
   default     = false
@@ -49,3 +50,4 @@ variable "az2" {
   default     = "eu-west-2b"
   description = "Default availability zone for the subnet."
 }
+
