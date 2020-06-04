@@ -59,4 +59,3 @@ resource "aws_security_group" "sgrp" {
     Name = "sg-${local.naming_suffix}"
   }
 }
-
